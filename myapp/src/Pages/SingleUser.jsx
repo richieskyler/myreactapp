@@ -21,7 +21,7 @@ const SingleUser = () => {
         `https://api.github.com/users/${id}`, 
         {
           headers: {
-            Authorization: `Bearer ${GITHUBTOKEN}`
+            Authorization: ` ${GITHUBTOKEN}`
           }
         }
       );

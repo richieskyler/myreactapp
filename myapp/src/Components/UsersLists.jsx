@@ -17,7 +17,7 @@ const UsersLists = ({users}) => {
                 // alt={`${user.name.first} ${user.name.last}`}
               />
               <div className="space-y-2 w-full">
-                <p><b>Name:</b> {user.login} </p>+
+                <p><b>Name:</b> {user.login} </p>
                 {/* <p><b>Email:</b> {user.login} </p>
                 <p><b>Followers:</b> {user.login} </p>
                 <p><b>Comapny:</b> {user.login} </p> */}

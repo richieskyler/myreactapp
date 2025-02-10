@@ -17,7 +17,7 @@ const Users = () => {
   const getUsers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://api.github.com/users`, {headers:{Authorization:`bearer ${GITHUBTOKEN}`}});
+      const response = await axios.get(`https://api.github.com/users`, {headers:{Authorization:` ${GITHUBTOKEN}`}});
       //https://randomuser.me/api/?results=10${gender === 'all' ? "" : `&gender=${gender}`}
       console.log(response.data)
       if (response.data.length > 0) {
