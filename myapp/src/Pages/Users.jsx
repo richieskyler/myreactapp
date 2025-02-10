@@ -25,7 +25,7 @@ const Users = () => {
       console.log(error);
     }
   };
-
+  
   useEffect(() => {
     getUsers();
   }, [gender]);
