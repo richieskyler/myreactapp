@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import  About  from "./About";
 import Blog from './blog';
 import Users from './Pages/Users';
+import SingleUser from './Pages/SingleUser';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
         <Route path="/about" element={<About />} ></Route>
         <Route path="/home" element={<App/>} ></Route>
         <Route path="/users" element={<Users/>} ></Route>
+        <Route path="/users/:id" element={<SingleUser/>} ></Route>
       </Routes>
     </Router>
   </React.StrictMode>

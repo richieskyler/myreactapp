@@ -6,26 +6,29 @@ import LoadingImages from '../Components/LoadingImages';
 import Navbar from '../Components/Navbar';
 import UsersLists from '../Components/UsersLists';
 
-
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [gender, setGender] = useState('');
   const handleChange = (e) =>{setGender(e.target.value)}
+  const GITHUBTOKEN = process.env.REACT_APP_GITHUB_TOKEN
+  
 
   const getUsers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://randomuser.me/api/?results=10${gender === 'all' ? "" : `&gender=${gender}`}`);
-      if (response.data.results.length > 0) {
-        setUsers(response.data.results);
+      const response = await axios.get(`https://api.github.com/users`, {headers:{Authorization:GITHUBTOKEN}});
+      //https://randomuser.me/api/?results=10${gender === 'all' ? "" : `&gender=${gender}`}
+      
+      if (response.data.length > 0) {
+        setUsers(response.data);
         setLoading(false);
       }
     } catch (error) {
       console.log(error);
     }
   };
-  
+
   useEffect(() => {
     getUsers();
   }, [gender]);
